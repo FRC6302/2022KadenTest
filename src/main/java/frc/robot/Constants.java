@@ -21,7 +21,17 @@ public final class Constants {
 
     public static final int DRIVER_CONTROLLER = 0;
 
-    public static final int LEFT_STICK_Y = 1;
-    public static final int RIGHT_STICK_Y = 5;
+    public static final int leftTrigger = 2;
+    public static final int rightTrigger = 3;
+    public static final int leftStickX = 0;
+    public static final int leftStickY = 1;
+    public static final int rightStickX = 4;
+    public static final int rightStickY = 5;
+    public static final int aButton = 1;
+    public static final int bButton = 2;
+    public static final int xButton = 3;
+    public static final int yButton = 4;
+    public static final int leftBumper = 5;
+    public static final int rightBumper = 6;
 
 }

@@ -4,7 +4,7 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 import frc.robot.RobotContainer;
@@ -30,8 +30,8 @@ public class Drive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double LeftStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.LEFT_STICK_Y);
-    double RightStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.RIGHT_STICK_Y);
+    double LeftStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.leftStickY);
+    double RightStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.rightStickY);
     RobotContainer.driveTrain.SetLeftMotors(LeftStickY);
     RobotContainer.driveTrain.SetRightMotors(RightStickY);
   }
