@@ -6,7 +6,8 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.commands.Drive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.Mecanum;
 //import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.DriveTrain;
 
@@ -21,12 +22,15 @@ public class RobotContainer {
 
   public static DriveTrain driveTrain = new DriveTrain();
   
-  public static Drive drive = new Drive();
+  public static Mecanum drive = new Mecanum();
 
 
   private XboxController driverController = new XboxController(Constants.DRIVER_CONTROLLER);
   public double GetDriverRawAxis(int axis) {
     return driverController.getRawAxis(axis);
+  }
+  public boolean GetDriverButton(int button) {
+    return driverController.getRawButton(button);
   }
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {

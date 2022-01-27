@@ -11,7 +11,7 @@ import frc.robot.RobotContainer;
 import frc.robot.Constants;
 
 
-public class Drive extends CommandBase {
+public class Mecanum extends CommandBase {
   
 
   
@@ -19,7 +19,7 @@ public class Drive extends CommandBase {
   /** Creates a new Drive. */
 
 
-  public Drive() {
+  public Mecanum() {
     addRequirements(RobotContainer.driveTrain);  
   }
 
@@ -30,17 +30,22 @@ public class Drive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+
+//Moving left: left side wheels spin inwards
+//Moving right: right side wheels spin inwards
+
     double LeftStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.leftStickY);
+    double LeftStickX = Robot.m_robotContainer.GetDriverRawAxis(Constants.leftStickX);
     double RightStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.rightStickY);
-    RobotContainer.driveTrain.SetLeftMotors(LeftStickY);
-    RobotContainer.driveTrain.SetRightMotors(RightStickY);
+    double RightStickX = Robot.m_robotContainer.GetDriverRawAxis(Constants.rightStickX);
+
+    
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.driveTrain.SetLeftMotors(0);
-    RobotContainer.driveTrain.SetRightMotors(0);
+    RobotContainer.driveTrain.ZeroMotors();
   }
 
   // Returns true when the command should end.

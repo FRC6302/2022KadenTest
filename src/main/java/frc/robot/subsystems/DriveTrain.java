@@ -24,9 +24,32 @@ private TalonSRX backRightMotor = new TalonSRX(Constants.BACK_RIGHT_MOTOR);
     frontLeftMotor.set(ControlMode.PercentOutput, -speed);
     backLeftMotor.set(ControlMode.PercentOutput, -speed);
   };
+
   public void SetRightMotors (double speed) {
     frontRightMotor.set(ControlMode.PercentOutput, speed);
     backRightMotor.set(ControlMode.PercentOutput, speed);
+  };
+
+
+  public void SetFrontLeftMotor (double speed) {
+    frontLeftMotor.set(ControlMode.PercentOutput, -speed);
+  }
+  public void SetFrontRightMotor (double speed) {
+    frontRightMotor.set(ControlMode.PercentOutput, speed);
+  }
+  public void SetBackLeftMotor (double speed) {
+    backLeftMotor.set(ControlMode.PercentOutput, -speed);
+  }
+  public void SetBackRightMotor (double speed) {
+    backRightMotor.set(ControlMode.PercentOutput, speed);
+  }
+
+  
+  public void ZeroMotors () {
+    frontRightMotor.set(ControlMode.PercentOutput, 0);
+    frontLeftMotor.set(ControlMode.PercentOutput, 0);
+    backRightMotor.set(ControlMode.PercentOutput, 0);
+    backLeftMotor.set(ControlMode.PercentOutput, 0);
   };
 
 
