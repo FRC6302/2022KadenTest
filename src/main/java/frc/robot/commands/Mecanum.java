@@ -40,6 +40,8 @@ public class Mecanum extends CommandBase {
     double RightStickX = Robot.m_robotContainer.GetDriverRawAxis(Constants.rightStickX);
 
     
+
+    
   }
 
   // Called once the command ends or is interrupted.

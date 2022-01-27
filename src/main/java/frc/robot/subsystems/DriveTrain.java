@@ -21,27 +21,27 @@ private TalonSRX backRightMotor = new TalonSRX(Constants.BACK_RIGHT_MOTOR);
   public DriveTrain() {}
 
   public void SetLeftMotors (double speed) {
-    frontLeftMotor.set(ControlMode.PercentOutput, -speed);
-    backLeftMotor.set(ControlMode.PercentOutput, -speed);
+    SetFrontLeftMotor(speed);
+    SetBackLeftMotor(speed);
   };
 
   public void SetRightMotors (double speed) {
-    frontRightMotor.set(ControlMode.PercentOutput, speed);
-    backRightMotor.set(ControlMode.PercentOutput, speed);
+    SetFrontRightMotor(speed);
+    SetBackRightMotor(speed);
   };
 
 
   public void SetFrontLeftMotor (double speed) {
-    frontLeftMotor.set(ControlMode.PercentOutput, -speed);
+    frontLeftMotor.set(ControlMode.PercentOutput, -speed * Constants.speedMultiplier);
   }
   public void SetFrontRightMotor (double speed) {
-    frontRightMotor.set(ControlMode.PercentOutput, speed);
+    frontRightMotor.set(ControlMode.PercentOutput, speed * Constants.speedMultiplier);
   }
   public void SetBackLeftMotor (double speed) {
-    backLeftMotor.set(ControlMode.PercentOutput, -speed);
+    backLeftMotor.set(ControlMode.PercentOutput, -speed * Constants.speedMultiplier);
   }
   public void SetBackRightMotor (double speed) {
-    backRightMotor.set(ControlMode.PercentOutput, speed);
+    backRightMotor.set(ControlMode.PercentOutput, speed * Constants.speedMultiplier);
   }
 
   

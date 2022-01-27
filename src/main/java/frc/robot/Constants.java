@@ -34,4 +34,6 @@ public final class Constants {
     public static final int leftBumper = 5;
     public static final int rightBumper = 6;
 
+    public static final double speedMultiplier = 0.4;
+
 }
