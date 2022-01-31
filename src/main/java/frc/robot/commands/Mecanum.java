@@ -4,7 +4,6 @@
 
 package frc.robot.commands;
 
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 import frc.robot.RobotContainer;
@@ -31,17 +30,24 @@ public class Mecanum extends CommandBase {
   @Override
   public void execute() {
 
-//Moving left: left side wheels spin inwards
-//Moving right: right side wheels spin inwards
+    double leftStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.leftStickY);
+    double leftStickX = Robot.m_robotContainer.GetDriverRawAxis(Constants.leftStickX);
+    double rightStickX = Robot.m_robotContainer.GetDriverRawAxis(Constants.rightStickX);
 
-    double LeftStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.leftStickY);
-    double LeftStickX = Robot.m_robotContainer.GetDriverRawAxis(Constants.leftStickX);
-    double RightStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.rightStickY);
-    double RightStickX = Robot.m_robotContainer.GetDriverRawAxis(Constants.rightStickX);
 
+    double leftFrontMotor = leftStickY + leftStickX + rightStickX;
     
+    double rightFrontMotor = leftStickY - leftStickX + rightStickX;
 
-    
+    double leftBackMotor = leftStickY - leftStickX - rightStickX;
+
+    double rightBackMotor = leftStickY + leftStickX - rightStickX;
+
+    RobotContainer.driveTrain.SetFrontLeftMotor(leftFrontMotor);
+    RobotContainer.driveTrain.SetFrontRightMotor(rightFrontMotor);
+    RobotContainer.driveTrain.SetBackLeftMotor(leftBackMotor);
+    RobotContainer.driveTrain.SetBackRightMotor(rightBackMotor);
+        
   }
 
   // Called once the command ends or is interrupted.
