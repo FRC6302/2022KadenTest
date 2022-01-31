@@ -30,9 +30,9 @@ public class Mecanum extends CommandBase {
   @Override
   public void execute() {
 
-    double leftStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.leftStickY);
-    double leftStickX = Robot.m_robotContainer.GetDriverRawAxis(Constants.leftStickX);
-    double rightStickX = Robot.m_robotContainer.GetDriverRawAxis(Constants.rightStickX);
+    double leftStickY = Robot.m_robotContainer.GetDriverAxisDeadzone(Constants.leftStickY);
+    double leftStickX = Robot.m_robotContainer.GetDriverAxisDeadzone(Constants.leftStickX);
+    double rightStickX = Robot.m_robotContainer.GetDriverAxisDeadzone(Constants.rightStickX);
 
 
     double leftFrontMotor = leftStickY + leftStickX + rightStickX;
@@ -47,7 +47,7 @@ public class Mecanum extends CommandBase {
     RobotContainer.driveTrain.SetFrontRightMotor(rightFrontMotor);
     RobotContainer.driveTrain.SetBackLeftMotor(leftBackMotor);
     RobotContainer.driveTrain.SetBackRightMotor(rightBackMotor);
-        
+
   }
 
   // Called once the command ends or is interrupted.

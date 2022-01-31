@@ -30,6 +30,13 @@ public class RobotContainer {
   public boolean GetDriverButton(int button) {
     return driverController.getRawButton(button);
   }
+
+
+  public double GetDriverAxisDeadzone(int axis) {
+    double percentage = GetDriverRawAxis(axis);
+    return (Math.abs(percentage) < Constants.deadzone) ? 0.0 : percentage;
+  }
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     driveTrain.setDefaultCommand(drive);
