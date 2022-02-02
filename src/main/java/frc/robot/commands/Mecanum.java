@@ -35,13 +35,13 @@ public class Mecanum extends CommandBase {
     double rightStickX = Robot.m_robotContainer.GetDriverAxisDeadzone(Constants.rightStickX);
 
   
-    double leftFrontMotor = leftStickY + leftStickX + rightStickX;
+    double leftFrontMotor = leftStickY - leftStickX - rightStickX;
     
-    double rightFrontMotor = leftStickY - leftStickX + rightStickX;
+    double rightFrontMotor = leftStickY + leftStickX + rightStickX;
 
-    double leftBackMotor = leftStickY - leftStickX - rightStickX;
+    double leftBackMotor = leftStickY + leftStickX - rightStickX;
 
-    double rightBackMotor = leftStickY + leftStickX - rightStickX;
+    double rightBackMotor = leftStickY - leftStickX + rightStickX;
 
     RobotContainer.driveTrain.SetFrontLeftMotor(leftFrontMotor);
     RobotContainer.driveTrain.SetFrontRightMotor(rightFrontMotor);
